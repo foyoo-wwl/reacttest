@@ -1,8 +1,8 @@
 import React,{Component,Fragment} from 'react';
-import {getList} from './store/actionCreators'
+import {getList} from '../../store/actionCreators'
 import 'antd/dist/antd.css';
-import store from './store'
-import {BtnSubmit,inputChange,deletaItem} from './store/actionCreators'
+import store from '../../store'
+import {BtnSubmit,inputChange,deletaItem} from '../../store/actionCreators'
 import TodoListUi from './todolistUI'
 
 class TodoList extends Component{

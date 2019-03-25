@@ -1,7 +1,7 @@
 import { INPUTCHANGE ,ITEMADD , DELETEITEM , LIST_INIT} from './ActionType'
 
 const defaultState = {
-    inptValue:"input",
+    inptValue:"饼子",
     list:[1,2,3,4]
 }
 export default(state=defaultState,action) => {

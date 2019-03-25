@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Son from './son'
-class App extends Component {
+import {Button,Input,Col,Row,List} from 'antd'
+class Father extends Component {
   constructor(props){
     super(props)
     this.state ={
@@ -37,20 +38,28 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <input type="text"  onChange={this.inpChange} value={this.state.input}/>
-          <button onClick={this.add}>点击</button>
-          <ul>
-            {
-              this.state.list.map((item,index)=>{
-                return(
-                  <Son item={item} key={index} removeProps={this.remove.bind(this,index)}/>
-                )
-              })
-            }           
-          </ul>
+          <Row>
+            <Col span={10}>
+              <Input type="text"  onChange={this.inpChange} value={this.state.input}/>        
+            </Col>
+            <Col span={2}>
+              <Button onClick={this.add}>点击</Button>            
+            </Col>
+          </Row>
+          <Row>
+            <Col span={10}>
+              <List
+                bordered
+                dataSource={this.state.list}
+                renderItem={(item,index) => (<Son item={item} key={index} removeProps={this.remove.bind(this,index)}/>)}
+              />      
+            </Col>
+
+          </Row>
+
       </div>
     );
   }
 }
 
-export default App
+export default Father
