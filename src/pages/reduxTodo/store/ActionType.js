@@ -1,4 +1,4 @@
-export const INPUTCHANGE = 'iptchange'
-export const ITEMADD = 'itemadd'
-export const DELETEITEM = 'deletaItem'
-export const LIST_INIT = 'list_init'
+export const INPUTCHANGE = 'todo/INPUTCHANGE'
+export const ITEMADD = 'todo/ITEMADD'
+export const DELETEITEM = 'todo/DELETEITEM'
+export const LIST_INIT = 'todo/LIST_INIT'

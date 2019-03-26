@@ -1,10 +1,9 @@
 import axios from 'axios';
-import {LIST_INIT} from './ActionType'
-import store from './index'
-import { INPUTCHANGE ,ITEMADD , DELETEITEM} from './ActionType'
+import * as constants from './ActionType'
 
-export const listInitAction = (data)=>({
-    type:LIST_INIT,
+
+const listInitAction = (data)=>({
+    type:constants.LIST_INIT,
     data
 })
 export const getList = ()=>{
@@ -16,23 +15,18 @@ export const getList = ()=>{
         })
     }
 }
-export const BtnSubmit = ()=>{
-    const action = {
-        type:ITEMADD
-    }      
-    store.dispatch(action)  
-}
-export const inputChange = (e)=>{
-    const action = {
-        type:INPUTCHANGE,
-        value:e.target.value
-    }
-    store.dispatch(action)
-} 
-export const deletaItem = (index)=>{
-    const action = {
-        type:DELETEITEM,
-        index
-    }
-    store.dispatch(action)        
-}
+export const inputChange = (e)=>({
+    type:constants.INPUTCHANGE,
+    value:e.target.value
+})
+
+export const btnSubmit = ()=>({
+    type:constants.ITEMADD
+})
+
+
+
+export const deleteItem = (index) =>({
+    type:constants.DELETEITEM,
+    index
+})

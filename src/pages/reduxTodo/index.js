@@ -1,7 +1,6 @@
 import React,{Fragment,Component} from 'react'
 import { connect } from 'react-redux'
-import { INPUTCHANGE ,ITEMADD , DELETEITEM } from './store/ActionType'
-import {getList} from './store/actionCreators'
+import * as actionCreator from './store/actionCreators'
 import ReduxTodoUI from './reduxTodoUI.js'
 class ReduxTodo extends Component{
     constructor(props){
@@ -28,35 +27,23 @@ class ReduxTodo extends Component{
 }
 const mapStateToProps = (state) => {
     return {
-        list: state.list,
-        iptval:state.inptValue
+        list: state.todo.list,
+        iptval:state.todo.inptValue
     }
 };
 const mapDispatchToProps = (dispatch) => {
     return {
         iptChange(e){
-            const action ={
-                type:INPUTCHANGE,
-                value:e.target.value
-            }
-            dispatch(action)
+            dispatch(actionCreator.inputChange(e))
         },
         btnSubmit(){
-            const action = {
-                type:ITEMADD
-            }
-            dispatch(action)
+            dispatch(actionCreator.btnSubmit())
         },
         deleteItem(index){
-            const action = {
-                type:DELETEITEM,
-                index:index
-            }
-            dispatch(action)
+            dispatch(actionCreator.deleteItem(index))
         },
         getlist(){
-            const action = getList()
-            dispatch(action)
+            dispatch(actionCreator.getList())
         }
     }
 };

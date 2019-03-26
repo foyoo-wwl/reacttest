@@ -8,11 +8,6 @@ class Nav extends React.Component{
             <Row style={{marginTop:'50px'}}>
                 <Col span={20} offset={2}>
                     <Button>
-                        <NavLink to='/todolist'>
-                            TodoList
-                        </NavLink>
-                    </Button>
-                    <Button>
                         <NavLink to='/props'>
                             Props
                         </NavLink>
@@ -20,6 +15,11 @@ class Nav extends React.Component{
                     <Button>
                         <NavLink to='/reduxTodo'>
                         reduxTodo
+                        </NavLink>
+                    </Button>
+                    <Button>
+                        <NavLink to='/immutable'>
+                            immutable
                         </NavLink>
                     </Button>
                 </Col>
