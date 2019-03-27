@@ -5,13 +5,15 @@ import ReduxTodoUI from './reduxTodoUI.js'
 class ReduxTodo extends Component{
     constructor(props){
         super(props);     
-        this.state = {} 
+        this.state = {
+            list:[1]
+        } 
     }
     render(){
         return(
             <Fragment> 
                 <ReduxTodoUI
-                    list={this.props.list}
+                    list={this.props.list.toJS()}
                     iptChange = {this.props.iptChange}
                     btnSubmit = {this.props.btnSubmit}
                     iptval = {this.props.iptval}
@@ -23,12 +25,11 @@ class ReduxTodo extends Component{
     componentDidMount(){
         this.props.getlist()
     }
-
 }
 const mapStateToProps = (state) => {
     return {
-        list: state.todo.list,
-        iptval:state.todo.inptValue
+        list: state.getIn(['todo','list']),
+        iptval:state.getIn(['todo','inptValue'])
     }
 };
 const mapDispatchToProps = (dispatch) => {

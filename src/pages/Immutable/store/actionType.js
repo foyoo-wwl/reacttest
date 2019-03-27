@@ -1,1 +1,7 @@
 export const GETLIST = 'immutable/GETLIST'
+export const CONVERT_LIST = 'immutable/CONVERT_LIST'
+export const MOUSE_IN = 'immutable/MOUSE_IN'
+export const FOUCUS = 'immutable/FOUCUS'
+export const BLUR = 'immutable/BLUR'
+export const LMOUSEIN = 'immutable/LMOUSEIN'
+export const LMOUSELEAVE = 'immutable/LMOUSELEAVE'

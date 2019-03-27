@@ -1,16 +1,16 @@
 import axios from 'axios';
 import * as constants from './ActionType'
-
+import {fromJS} from 'immutable'
 
 const listInitAction = (data)=>({
     type:constants.LIST_INIT,
-    data
+    data:fromJS(data)
 })
 export const getList = ()=>{
     return (dispatch)=>{
-        axios.get('https://www.easy-mock.com/mock/5c862e9d83bce068aab20486/axiostest/todolist')
+        axios.get('api/immutable.json')
         .then((res)=>{
-            const data = res.data.data
+            const data = res.data.list
             dispatch(listInitAction(data))
         })
     }

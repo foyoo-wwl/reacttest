@@ -1,27 +1,28 @@
 import { INPUTCHANGE ,ITEMADD , DELETEITEM , LIST_INIT} from './ActionType'
+import { fromJS } from 'immutable';
 
-const defaultState = {
+
+const defaultState = fromJS({
     inptValue:"饼子",
-    list:[1,2,3,4]
-}
+    list:[]
+})
 export default(state=defaultState,action) => {
-    if(action.type === INPUTCHANGE){
-        const newData = JSON.parse(JSON.stringify(state));
-        newData.inptValue = action.value
-        return newData
-    }else if(action.type === ITEMADD){
-        const newData = JSON.parse(JSON.stringify(state));
-        newData.list.push(state.inptValue)
-        newData.inptValue = ''
-        return newData        
-    }else if(action.type === DELETEITEM){
-        const newData = JSON.parse(JSON.stringify(state));
-        newData.list.splice(action.index,1)
-        return newData          
-    }else if(action.type === LIST_INIT){
-        const newData = JSON.parse(JSON.stringify(state));
-        newData.list = action.data.list
-        return newData         
+    switch(action.type){
+        case INPUTCHANGE:
+            return state.set('inptValue',action.value)
+        case ITEMADD:
+            let _list = state.get('list')
+            _list = _list.push(state.get('inptValue'))       
+            return state.merge({
+                list:_list,
+                inptValue:''
+            })
+        case DELETEITEM:
+            const _list_ = state.get('list')
+            return state.set('list',_list_.delete(action.index))
+        case LIST_INIT:
+            return state.set('list',action.data)
+        default:
+            return state
     }
-    return state
 }
