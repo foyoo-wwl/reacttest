@@ -1,4 +1,5 @@
 import React from 'react';
+import './reset.css'
 import ReactDOM from 'react-dom';
 import Nav from './pages/Nav/index.js';
 import Father from './pages/props/App.js'
@@ -9,13 +10,14 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import {Row,Col } from 'antd';
 import {Provider} from 'react-redux'
 import store from './store'
+import Douban from './pages/douban'
 import 'antd/dist/antd.css';
 
 class App extends React.Component{
     render(){
         return (
-            <Row style={{marginTop:'50px'}}>
-                <Col span={20} offset={2}>   
+            <Row>
+                <Col span={24}>   
                     <Provider store={store}>          
                         <BrowserRouter>  
                             <Header/>    
@@ -23,7 +25,8 @@ class App extends React.Component{
                                 <Route exact path='/' component={Nav} />
                                 <Route path='/props' component={Father} />                            
                                 <Route path='/reduxTodo' component={ReduxTodo} />    
-                                <Route path='/immutable' component={Immutable} />                                                                                      
+                                <Route path='/immutable' component={Immutable} />
+                                <Route path='/douban' render={()=>(<Douban/>)}/>                                                                                      
                             </Switch>                                                                                                     
                         </BrowserRouter>
                     </Provider> 

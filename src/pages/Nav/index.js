@@ -22,6 +22,11 @@ class Nav extends React.Component{
                             immutable
                         </NavLink>
                     </Button>
+                    <Button>
+                        <NavLink to='/douban'>
+                            豆瓣
+                        </NavLink>
+                    </Button>
                 </Col>
             </Row>
         )
