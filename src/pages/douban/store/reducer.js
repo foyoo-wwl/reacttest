@@ -4,7 +4,8 @@ const doubanArr = fromJS({
     serchIptValue:'',
     searchData:null,
     searchTitle:'',
-    path:''
+    path:'',
+    inTheaters:null
 })
 
 export default(state=doubanArr,action)=>{
@@ -18,6 +19,8 @@ export default(state=doubanArr,action)=>{
                 path:action.title,
                 serchIptValue:''
             })
+        case contants.IN_THEATERS:
+            return state.set('inTheaters',action.data)
         default:
             return state
     }

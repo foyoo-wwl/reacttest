@@ -3,9 +3,9 @@ import React from 'react'
 const searchUI = (props)=>{
     if(props){
         return(
-            props.map((item)=>{
+            props.map((item,index)=>{
                 return(
-                    <div className="item-root" key={item.id}>
+                    <div className="item-root" key={item.id-index}>
                         <a 
                             href={item.alt} 
                             className="cover-link" 
@@ -13,7 +13,7 @@ const searchUI = (props)=>{
                             rel="nofollow me noopener noreferrer"
                         >
                             <img
-                            alt={item.title} className="cover"/>
+                            alt={item.title} className="cover" src={item.images.large.replace('jpg','webp')}/>
                         </a>
                         <div className="detail">
                             <div className="title">
@@ -36,13 +36,13 @@ const searchUI = (props)=>{
                                     }
                                     主演：
                                     {
-                                        item.casts.map((item)=>{
+                                        item.casts.map((item,index)=>{
                                             return(
                                                 <a 
                                                     href={item.alt} 
                                                     target='_blank'
                                                     rel="nofollow me noopener noreferrer"
-                                                    key={item.id}
+                                                    key={item.id-index}
                                                 > {item.name} </a>
                                             )
                                         })

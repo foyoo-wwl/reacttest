@@ -9,8 +9,10 @@ export function jsonp(url,data,option){
         originJsonp(BaseUrl, option, (err, data) => {
             if (!err) {
                 resolve(data)
+                BaseUrl = "https://api.douban.com/v2/movie"
             }else {
                 reject(err)
+                BaseUrl = "https://api.douban.com/v2/movie"
             }
         })
     })   

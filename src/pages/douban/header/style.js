@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import logoPic from './../../../statics/douban/lg_movie@2x.png';
 
-export const Logo = styled.a`
+export const Logo = styled.div`
     float: left;
     height: 56px;
     width: 145px;
@@ -25,7 +25,6 @@ export const HeaderWrapper = styled.div`
     min-width: 1040px;
     overflow: hidden;
     zoom: 1;
-    margin-bottom: 40px;
     .iptWrapper{
         margin-top:10px;
     }

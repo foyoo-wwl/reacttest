@@ -31,17 +31,21 @@ class Header extends Component{
             _link:''
         }
     }
+    componentDidMount(){
+        console.log(this.props.path)
+    }
     render(){
         return(
             <HeaderWrapper>
-                <IndexWrapprer>
-                    <Logo/>
+                <IndexWrapprer>                   
+                    <NavLink to='/douban'><Logo/></NavLink>                   
                     <div className='iptWrapper'>
                         <Input
                             style={{width:'470px'}}
                             value={this.props.searchIptSearch}
                             placeholder='搜索电影、电视剧、综艺、影人'
                             onChange={(e)=>this.props.changeSearchVal(e)}
+                            onKeyUp={(e)=>e.keyCode === 13?this.props.searchSubmit(this.props.searchIptSearch):null}
                         />
                         <Button 
                             shape="circle" 
@@ -82,7 +86,7 @@ const mapDispatchToProps = (dispatch)=>{
                 }).then((res)=>{           
                     dispatch(actions.InitSearchList(res))
                     this.history.push("/douban/search/"+value)
-                }) 
+                })
             }else{
                 message.info('请输入内容')
             }
