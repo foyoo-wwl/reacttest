@@ -7,7 +7,7 @@ const searchUI = (props)=>{
                 return(
                     <div className="item-root" key={item.id-index}>
                         <a 
-                            href={item.alt} 
+                            href={"/douban/detail/"+item.id} 
                             className="cover-link" 
                             target="_blank"
                             rel="nofollow me noopener noreferrer"
@@ -18,7 +18,7 @@ const searchUI = (props)=>{
                         <div className="detail">
                             <div className="title">
                                 <a 
-                                    href="https://movie.douban.com/subject/1394626/"  
+                                    href={"/douban/detail/"+item.id}  
                                     className="title-text" 
                                     target="_blank"
                                     rel="nofollow me noopener noreferrer"

@@ -12,7 +12,7 @@ const initTheater = (data)=>{
                     <li className='cardLi' key={item.id}>
                         <ul className="cardul">
                             <li className="poster">
-                                <a  href="https://movie.douban.com/subject/27179414/?from=showing" target='_blank'>
+                                <a  href={"/douban/detail/"+item.id} target='_blank' rel="noopener noreferrer">
                                     <img src={item.images.large.replace('jpg','webp')} alt={item.title} rel="noopener noreferrer" className=""/>
                                 </a>
                             </li>
