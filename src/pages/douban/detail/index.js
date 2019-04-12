@@ -48,6 +48,7 @@ class Detail extends Component{
                 this.setState({
                     detail:res
                 })
+            }).then(()=>{
                 this.getData((res) => {
                     this.setState({
                       initLoading: false,
@@ -55,7 +56,6 @@ class Detail extends Component{
                       list: res.comments
                     });
                 }); 
-
             })
         }
 
