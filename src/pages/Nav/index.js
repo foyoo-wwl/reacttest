@@ -27,6 +27,11 @@ class Nav extends React.Component{
                             豆瓣
                         </NavLink>
                     </Button>
+                    <Button>
+                        <NavLink to='/mock'>
+                            mock
+                        </NavLink>
+                    </Button>
                 </Col>
             </Row>
         )

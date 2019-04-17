@@ -11,6 +11,7 @@ import {Row,Col } from 'antd';
 import {Provider} from 'react-redux'
 import store from './store'
 import Douban from './pages/douban'
+import Mock from './pages/mock'
 import 'antd/dist/antd.css';
 
 class App extends React.Component{
@@ -26,7 +27,8 @@ class App extends React.Component{
                                 <Route path='/props' component={Father} />                            
                                 <Route path='/reduxTodo' component={ReduxTodo} />    
                                 <Route path='/immutable' component={Immutable} />
-                                <Route path='/douban' render={()=>(<Douban/>)}/>                                                                                      
+                                <Route path='/douban' render={()=>(<Douban/>)}/>            
+                                <Route path='/mock' component={Mock}/>                                                                          
                             </Switch>                                                                                                     
                         </BrowserRouter>
                     </Provider> 

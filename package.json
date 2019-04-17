@@ -8,6 +8,7 @@
     "history": "^4.9.0",
     "immutable": "^4.0.0-rc.12",
     "jsonp": "^0.2.1",
+    "mockjs": "^1.0.1-beta3",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-redux": "^6.0.0",
